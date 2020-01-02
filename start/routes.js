@@ -22,6 +22,9 @@ Route.get('/', () => {
 
 Route.post('/register','AuthController.register')
 Route.get('/authenticated','AuthController.authenticated')
+Route.get('/forgotpassword','AuthController.forgotPassword')
+
+Route.post('/alterpassword','AuthController.alterPassword').middleware('auth')
 
 Route.group(()=>{
   Route.resource('genres','GenreController').apiOnly().except(['destroy','update','store'])
