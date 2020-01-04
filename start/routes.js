@@ -21,8 +21,8 @@ Route.get('/', () => {
 })
 
 Route.post('/register','AuthController.register')
-Route.get('/authenticated','AuthController.authenticated')
-Route.get('/forgotpassword','AuthController.forgotPassword')
+Route.post('/authenticated','AuthController.authenticated')
+Route.post('/forgotpassword','AuthController.forgotPassword')
 
 Route.post('/alterpassword','AuthController.alterPassword').middleware('auth')
 
