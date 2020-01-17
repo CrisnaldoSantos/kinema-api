@@ -93,14 +93,14 @@ class MovieController {
     return movies;
   }
 
-  async showOnlyUser ({ auth}) {
+  async showOnlyUser ({params, auth}) {
     
-    const User = use('App/Models/User')
+    /*const User = use('App/Models/User')
     const user = await User.find(auth.user.id)
     const movies = await user
-    .movies().where('watched_flag',false).fetch();
-
-    return movies;
+    .movies().where('watched_flag',false).fetch();*/
+    const mov = Movie.query().where('user_id',auth.user.id).where('watched_flag',false).paginate(params.page,10);
+    return mov;
   }
 }
 

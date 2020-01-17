@@ -30,5 +30,5 @@ Route.group(()=>{
   Route.resource('genres','GenreController').apiOnly().except(['destroy','update','store'])
   Route.resource('rattings','RattingController').apiOnly().except(['destroy','update','store'])
   Route.resource('movies','MovieController').apiOnly().except(['index'])
-  Route.get('/movies','MovieController.showOnlyUser')
+  Route.get('/movies/page/:page','MovieController.showOnlyUser')
 }).middleware('auth')
