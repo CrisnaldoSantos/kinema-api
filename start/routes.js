@@ -31,4 +31,5 @@ Route.group(()=>{
   Route.resource('rattings','RattingController').apiOnly().except(['destroy','update','store'])
   Route.resource('movies','MovieController').apiOnly().except(['index'])
   Route.get('/movies/page/:page','MovieController.showOnlyUser')
+  Route.get('/watchedmovies/page/:page','WatchedMovieController.index')
 }).middleware('auth')
