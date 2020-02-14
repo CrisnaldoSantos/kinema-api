@@ -4,9 +4,9 @@
 const Model = use('Model')
 
 class Movie extends Model {
-    genre(){
-        return this.hasOne('App/Models/Genre');
-    }
+    watcheds(){
+        return this.hasOne('App/Models/Watched')
+      }
 }
 
 module.exports = Movie
